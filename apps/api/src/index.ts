@@ -1,6 +1,7 @@
 import Fastify from 'fastify';
 
-const port = process.env.PORT || 3000;
+const parsedPort = Number(process.env.PORT);
+const port = process.env.PORT && !Number.isNaN(parsedPort) ? parsedPort : 3000;
 
 const fastify = Fastify({
   logger: true
@@ -14,7 +15,7 @@ fastify.get('/', async (request, reply) => {
 // Run the server
 const start = async () => {
   try {
-    await fastify.listen({ port: 3000, host: '0.0.0.0' });
+    await fastify.listen({ port, host: '0.0.0.0' });
     console.log(`Server is running on http://localhost:${port}`);
   } catch (err) {
     fastify.log.error(err);
