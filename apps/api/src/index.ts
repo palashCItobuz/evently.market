@@ -1,3 +1,4 @@
+import './db/client';
 import Fastify from 'fastify';
 
 const parsedPort = Number(process.env.PORT);
