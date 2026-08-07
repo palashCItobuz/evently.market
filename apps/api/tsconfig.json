@@ -4,23 +4,12 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "paths": {
-      "@event-marketplace/shared-types": [
-        "../../packages/shared-types/src/index.ts"
-      ],
-      "*": [
-        "./*"
-      ]
-    },
-    "rootDirs": [
-      "./src",
-      "../../packages/shared-types/src"
-    ],
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "../../"
   },
   "include": [
     "src/**/*",
+    "../../packages/shared-types/src/**/*",
     "package.json"
   ],
 }

@@ -1,5 +1,5 @@
 import { pgTable, uuid, varchar, integer, timestamp, pgEnum } from 'drizzle-orm/pg-core';
-import { ENGAGEMENT_TYPES, EVENT_STATUSES } from '../../../../../packages/shared-types/src';
+import { ENGAGEMENT_TYPES, EVENT_STATUSES } from '@event-marketplace/shared-types';
 import { users } from './users';
 
 export const engagementTypeEnum = pgEnum('engagement_type', ENGAGEMENT_TYPES);
