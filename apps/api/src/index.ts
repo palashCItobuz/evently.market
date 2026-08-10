@@ -1,4 +1,5 @@
-import './db/client';
+import { db } from './db/client';
+import { sql } from 'drizzle-orm';
 import Fastify from 'fastify';
 
 const parsedPort = Number(process.env.PORT);
@@ -10,7 +11,14 @@ const fastify = Fastify({
 
 // Declare a base route
 fastify.get('/', async (request, reply) => {
-  return { hello: 'world from event-marketplace api!' };
+  try {
+    const result = await db.execute(sql`SELECT 1 AS ok`);
+    console.log(result);
+    return { hello: 'world from event-marketplace api!' };
+  } catch (error) {
+    console.error('Error executing query:', error);
+    reply.status(500).send({ error: 'Internal 2 Server Error' });
+  }
 });
 
 // Run the server
