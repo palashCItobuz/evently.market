@@ -12,7 +12,8 @@
     "build:shared-types": "npm run build -w packages/shared-types",
     "build": "npm run build:shared-types && npm run build:api && npm run build:web && npm run build:mobile",
     "lint": "eslint . --ext .ts,.tsx",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "migrate:api": "drizzle-kit migrate --config apps/api/drizzle.config.ts"
   },
   "keywords": [],
   "author": "",

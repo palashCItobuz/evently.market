@@ -5,14 +5,13 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "outDir": "./dist",
-    "rootDir": "./",
+    "rootDir": "./src",
     "types": [
       "node"
     ]
   },
   "include": [
     "src/**/*",
-    "drizzle.config.ts",
     "package.json"
   ],
 }
