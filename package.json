@@ -6,6 +6,11 @@
   "scripts": {
     "dev:api": "npm run dev -w apps/api",
     "dev:web": "npm run dev -w apps/web",
+    "build:api": "npm run build -w apps/api",
+    "build:web": "npm run build -w apps/web",
+    "build:mobile": "npm run build -w apps/mobile",
+    "build:shared-types": "npm run build -w packages/shared-types",
+    "build": "npm run build:shared-types && npm run build:api && npm run build:web && npm run build:mobile",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write ."
   },
